@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+    <header>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preventa</title>
+        <link rel="stylesheet" href="style.css"> 
+    </header>
+    <h1 class="Titulo">Preventa</h1>
+    <h3 class="Subtitulo">No te quedes sin el tuyo!</h3>
+    <div class="container">
+        <div class="image-container">
+            <div class="text-overlay">Ellos</div>
+            <img src="img/WhatsApp Image 2024-09-17 at 17.51.27.jpeg" alt="Imagen de preventa">
+        </div>
+        <div class="content">
+            <p><strong>Precio:</strong> $67.000</p>
+            <p><strong>Tiempo de elaboración:</strong> 20 días</p>
+            <p><strong>Talle:</strong> M, L, XL</p>
+        </div>
+
+        <div class="image-container">
+            <div class="text-overlay">Ellas</div>
+            <img src="img/WhatsApp Image 2024-09-17 at 17.51.29 (1).jpeg" alt="Imagen de preventa">
+        </div>
+    
+        
+    </div>
+
+    <div class="form-container">
+        <h2>Formulario de Información</h2>
+        <form id="dataForm">
+            <div>
+                <label>Talle:</label>
+                <label for="sizeL">
+                    <input type="radio" id="sizeL" name="size" value="L" required>
+                    L
+                </label>
+                <label for="sizeM">
+                    <input type="radio" id="sizeM" name="size" value="M">
+                    M
+                </label>
+                <label for="sizeXL">
+                    <input type="radio" id="sizeXL" name="size" value="XL">
+                    XL
+                </label>
+            </div>
+
+            <div>
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="payment">Forma de Pago:</label>
+                <select id="payment" name="payment" required>
+                    <option value="Mercado Pago">Mercado Pago</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+                </select>
+            </div>
+
+    
+            <button type="button" onclick="sendToWhatsApp()">Enviar</button>    </form>
+    
+    <script>
+        function sendToWhatsApp() {
+            // Obtén los valores del formulario
+            const size = document.querySelector('input[name="size"]:checked').value;
+            const username = document.getElementById('username').value;
+            const payment = document.getElementById('payment').value;
+
+            // Crea el mensaje para WhatsApp
+            const message = `Talle seleccionado: ${size}\nNombre de Usuario: ${username}\nForma de Pago: ${payment}`;
+            
+            // Codifica el mensaje para el enlace
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Número de teléfono de destino (cambia esto a tu número en formato internacional)
+            const phoneNumber = '549465535888';
+            
+            // Crea el enlace de WhatsApp
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Abre el enlace en una nueva pestaña
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+body {
+    background-color: #56829aba;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 16px; 
+}
+
+header {
+    margin-bottom: 32px;
+    text-align: center;
+}
+.Titulo{
+    text-align: center;
+    font-size: 42px;
+    color: #3b82f6;
+    text-decoration: underline;
+    font-family: none;
+    background-color: #ffffdd;
+    border-radius: 10px;
+    height: 51px;
+    width: 50%;
+}
+.Subtitulo{
+    font-size: 49px;
+    font-family: monospace;
+    margin-bottom: 1px;
+
+}
+
+h2 {
+    font-size: 2.25rem; 
+    font-weight: 800; 
+    color: #1e40af; 
+    background-color: #dbeafe; 
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    background-color: tan;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 1024px; 
+    width: 100%;
+    margin-bottom: 32px;
+    padding: 16px; 
+}
+
+.image-container {
+    position: relative;
+    flex: 1; 
+    padding: 16px;
+    transition: transform 0.3s ease;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+.image-container:hover img {
+    transform: scale(1.1); /* Ajusta el factor de escala según sea necesario */
+}
+
+.text-overlay {
+    position: absolute;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 4px;
+    top: 16px;
+    left: 16px;
+    
+}
+
+.content {
+    flex: 2; 
+    padding: 16px;
+}
+
+.content {
+    padding: 24px;
+    background-color: #56829aba; 
+}
+
+.content h2 {
+    font-size: 1.5rem; 
+    font-weight: 600; 
+    color: #040404; 
+    margin-bottom: 16px;
+}
+
+.content p {
+    font-size: 1.125rem;
+    color: #040404; 
+    margin-bottom: 8px;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px; 
+}
+
+.form-container h2 {
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    margin-bottom: 24px;
+    color: #1e40af; 
+    text-align: center;
+}
+
+.form-container label {
+    display: inline-flex;
+    font-size: 0.875rem; 
+    font-weight: 500; 
+    color: #4b5563; 
+    margin-bottom: 4px;
+}
+
+.form-container input,
+.form-container select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db; 
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+    outline: none;
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); 
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3b82f6; 
+    color: #ffffff;
+    font-weight: 700; 
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+}
+
+.form-container button:hover {
+    background-color: #2563eb; 
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .Titulo {
+        font-size: 28px;
+    }
+
+    .container {
+        flex-direction: column; /* Cambia a una columna en pantallas pequeñas */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    .form-container {
+        padding: 16px;
+    }
+
+    .form-container h2 {
+        font-size: 1.25rem;
+    }
+
+    .form-container input,
+    .form-container select {
+        padding: 6px 8px;
+    }
+
+    .form-container button {
+        padding: 10px;
+    }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .Titulo {
+        font-size: 36px;
+    }
+
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap; /* Permite que los elementos se envuelvan si es necesario */
+    }
+
+    .image-container {
+        width: 48%; /* Ajusta el ancho para que las imágenes no se apilen */
+        margin-bottom: 16px;
+    }
+
+    .form-container {
+        padding: 24px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Estilos para pantallas grandes (computadoras de escritorio) */
+@media (min-width: 1025px) {
+    .Titulo {
+        font-size: 42px;
+    }
+
+    .container {
+        flex-direction: row;
+        flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+    }
+
+    .image-container {
+        width: 48%;
+    }
+}
